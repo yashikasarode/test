@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+    
+    <bean name="address" class="com.ConstructorInjection.Address">
+    <property name="h_no" value="1"></property>
+    <property name="street" value="190-B"></property>
+    <property name="city" value="Indore"></property>
+    </bean>
+    
+    <bean name="employee" class="com.ConstructorInjection.Employee">
+    <constructor-arg>
+    <value>12</value>
+    </constructor-arg>
+    <constructor-arg>
+    <ref bean="address"></ref>
+    </constructor-arg>
+    </bean>
+  </beans>
